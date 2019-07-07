@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="599.0" prefWidth="743.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="controleur.SplashController">
+   <children>
+      <ImageView blendMode="SRC_ATOP" fitHeight="421.0" fitWidth="743.0" layoutX="56.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="89.0">
+         <image>
+            <Image url="@../images/bibliotheque-web.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D minX="743.0" minY="600.0" width="1600.0" />
+         </viewport>
+      </ImageView>
+   </children>
+</AnchorPane>

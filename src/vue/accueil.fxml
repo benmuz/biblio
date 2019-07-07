@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="568.0" prefWidth="948.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.accueilController">
+    <children>
+      <AnchorPane prefHeight="568.0" prefWidth="200.0" styleClass="menubar" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <JFXButton fx:id="menuLivre" layoutX="1.0" layoutY="117.0" onAction="#menuLivre" prefHeight="96.0" prefWidth="203.0" styleClass="menu" stylesheets="@style.css" text="Livre">
+               <font>
+                  <Font name="Book Antiqua Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="menuStatisitque" layoutX="4.0" layoutY="404.0" onAction="#menuStatisitque" prefHeight="96.0" prefWidth="200.0" styleClass="menu" stylesheets="@style.css" text="Statistique">
+               <font>
+                  <Font name="Book Antiqua Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="menuLecteur" layoutX="1.0" layoutY="213.0" onAction="#menuLecteur" prefHeight="96.0" prefWidth="200.0" styleClass="menu" stylesheets="@style.css" text="Lecteur">
+               <font>
+                  <Font name="Book Antiqua Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="menuEmprunt" layoutX="1.0" layoutY="309.0" onAction="#menuEmprunt" prefHeight="96.0" prefWidth="200.0" styleClass="menu" stylesheets="@style.css" text="Emprunt">
+               <font>
+                  <Font name="Book Antiqua Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="117.0" fitWidth="220.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/images.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <StackPane fx:id="contenteurPrefet" layoutX="204.0" prefHeight="568.0" prefWidth="744.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="204.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="panMessage" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="267.0" prefHeight="35.0" prefWidth="744.0" text="Pas d'acces a la base de donée, veuillez activre la base de donnée" textFill="#dd1e1e" AnchorPane.bottomAnchor="266.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="267.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+    </children>
+</AnchorPane>

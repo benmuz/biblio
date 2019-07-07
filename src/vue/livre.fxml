@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="panMain" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.LivreController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="8.0" layoutY="54.0" prefHeight="353.0" prefWidth="726.0" styleClass="pane" stylesheets="@style.css" AnchorPane.bottomAnchor="198.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="54.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <TableView fx:id="tab" layoutX="7.0" layoutY="8.0" onMouseClicked="#clicTab" prefHeight="347.0" prefWidth="710.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="8.0">
+              <columns>
+                  <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colCode" prefWidth="75.0" text="Code" />
+                <TableColumn fx:id="colTitre" prefWidth="75.0" text="Titre" />
+                  <TableColumn fx:id="colAut" prefWidth="75.0" text="Auteur" />
+                  <TableColumn fx:id="colAnn" prefWidth="110.0" text="Année d'édition" />
+                  <TableColumn fx:id="colEdition" prefWidth="110.0" text="Edition" />
+                  <TableColumn fx:id="colCat" prefWidth="67.0" text="Catégorie" />
+                  <TableColumn fx:id="colVil" prefWidth="75.0" text="Ville d'édition" />
+                  <TableColumn fx:id="colEmp" prefWidth="75.0" text="Emplassement" />
+                  <TableColumn fx:id="colNb" prefWidth="75.0" text="Quantité" />
+              </columns>
+               
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#mod" text="Modifier">
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/ic_mode_edit_black_36dp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#supp" text="Supprimer">
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/ic_delete_forever_black_18dp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Imprimer">
+                           <graphic>
+                              <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/ic_print_black_48dp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <JFXButton buttonType="RAISED" contentDisplay="CENTER" layoutX="678.0" layoutY="326.0" onAction="#add" prefHeight="37.0" prefWidth="39.0" style="-fx-background-radius: 25px;" styleClass="bouton" text=" " AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="9.0">
+               <graphic>
+                  <ImageView fx:id="icones" fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_add_black_48dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="lab_qte" layoutX="9.0" layoutY="425.0" prefHeight="176.0" prefWidth="726.0" styleClass="pane" stylesheets="@style.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="8.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Separator layoutX="264.0" layoutY="13.0" orientation="VERTICAL" prefHeight="135.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="264.0" />
+            <TableView fx:id="tab1" layoutX="270.0" layoutY="34.0" prefHeight="135.0" prefWidth="449.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="7.0">
+               <columns>
+                  <TableColumn fx:id="colId1" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="colLect" prefWidth="75.0" text="Lecteur" />
+                  <TableColumn fx:id="colJour" prefWidth="75.0" text="Jour de l'emprunt" />
+                  <TableColumn fx:id="colRetour" prefWidth="75.0" text="Date du retour" />
+                  <TableColumn fx:id="colOb" prefWidth="75.0" text="Observation" />
+                  <TableColumn fx:id="colId_lec" prefWidth="75.0" text="id_lect" visible="false" />
+                  <TableColumn fx:id="colId_liv" prefWidth="75.0" text="id_liv" visible="false" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               
+               
+            </TableView>
+            <Label layoutX="277.0" layoutY="14.0" text="Liste des emprunt du livre " />
+            <Label layoutX="575.0" layoutY="14.0" prefHeight="17.0" prefWidth="102.0" text="Quantité restante :" />
+            <AnchorPane fx:id="paneStat" layoutX="14.0" layoutY="6.0" prefHeight="165.0" prefWidth="246.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="466.0" AnchorPane.topAnchor="6.0" />
+         </children>
+      </AnchorPane>
+      <JFXButton contentDisplay="CENTER" layoutX="65.0" layoutY="14.0" onAction="#mod" prefHeight="31.0" prefWidth="39.0" stylesheets="@style.css">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_mode_edit_black_36dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Modifier" />
+         </tooltip>
+         <styleClass>
+            <String fx:value="menu" />
+            <String fx:value="tabBor" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" onAction="#add" prefHeight="31.0" prefWidth="39.0" stylesheets="@style.css">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_add_circle_outline_black_36dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Ajouter" />
+         </tooltip>
+         <styleClass>
+            <String fx:value="menu" />
+            <String fx:value="tabBor" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="116.0" layoutY="14.0" onAction="#supp" prefHeight="31.0" prefWidth="44.0" stylesheets="@style.css">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_delete_forever_black_18dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Supprimer" />
+         </tooltip>
+         <styleClass>
+            <String fx:value="menu" />
+            <String fx:value="tabBor" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="167.0" layoutY="14.0" onAction="#supp" prefHeight="31.0" prefWidth="51.0" stylesheets="@style.css">
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ic_print_black_48dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Imprimer" />
+         </tooltip>
+         <styleClass>
+            <String fx:value="menu" />
+            <String fx:value="tabBor" />
+         </styleClass>
+      </JFXButton>
+      <JFXTextField fx:id="txt_search" focusColor="#b85d03" layoutX="496.0" layoutY="14.0" maxWidth="902.0" minWidth="230.0" onKeyTyped="#recherche" onMouseClicked="#actualiser" onMouseEntered="#actualiser" onMouseExited="#actualiser" prefHeight="31.0" prefWidth="230.0" promptText="Search" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="14.0" />
+      <ImageView fitHeight="23.0" fitWidth="24.0" layoutX="690.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="18.0">
+         <image>
+            <Image url="@../images/ic_search_black_24dp.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="panAdd" layoutX="439.0" layoutY="203.0" prefHeight="493.0" prefWidth="257.0" style="-fx-background-radius: 5px;" styleClass="pane" stylesheets="@style.css" AnchorPane.bottomAnchor="51.0" AnchorPane.rightAnchor="60.0">
+         <children>
+            <JFXTextField fx:id="txt_code" focusColor="#b85d03" labelFloat="true" layoutX="13.0" layoutY="35.0" maxWidth="230.0" minWidth="230.0" prefHeight="31.0" prefWidth="230.0" promptText="Code" />
+            <JFXTextField fx:id="txt_titre" focusColor="#b85d03" labelFloat="true" layoutX="14.0" layoutY="81.0" maxWidth="230.0" minWidth="230.0" prefHeight="31.0" prefWidth="230.0" promptText="Titre" />
+            <JFXTextField fx:id="txt_aut" focusColor="#b85d03" labelFloat="true" layoutX="14.0" layoutY="127.0" maxWidth="230.0" minWidth="230.0" prefHeight="31.0" prefWidth="230.0" promptText="Auteur" />
+            <JFXTextField fx:id="txt_edi" focusColor="#b85d03" labelFloat="true" layoutX="13.0" layoutY="178.0" maxWidth="230.0" minWidth="230.0" prefHeight="31.0" prefWidth="230.0" promptText="Année d'édition" />
+            <JFXComboBox fx:id="combo_cat" layoutX="18.0" layoutY="265.0" prefHeight="25.0" prefWidth="215.0" promptText="Catégorie" />
+            <JFXTextField fx:id="txt_vil" focusColor="#b85d03" labelFloat="true" layoutX="13.0" layoutY="315.0" maxWidth="230.0" minWidth="230.0" prefHeight="31.0" prefWidth="230.0" promptText="Ville d&quot;éditon" />
+            <JFXTextField fx:id="txt_emp" focusColor="#b85d03" labelFloat="true" layoutX="11.0" layoutY="356.0" maxWidth="230.0" minWidth="230.0" prefHeight="31.0" prefWidth="230.0" promptText="Emplacement" />
+            <JFXTextField fx:id="txt_qte" focusColor="#b85d03" labelFloat="true" layoutX="11.0" layoutY="401.0" maxWidth="230.0" minWidth="215.0" prefHeight="31.0" prefWidth="230.0" promptText="Quantité" />
+            <JFXButton buttonType="RAISED" layoutX="18.0" layoutY="440.0" onAction="#annuler" prefHeight="31.0" prefWidth="102.0" styleClass="bouton_no" text="Annuler">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_remove_circle_black_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="131.0" layoutY="440.0" onAction="#save" prefHeight="31.0" prefWidth="102.0" styleClass="bouton_ok" text="Enregistrer">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_save_black_18dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="lab_tit" layoutX="109.0" layoutY="4.0" text="Label">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txt_EDITION" focusColor="#b85d03" labelFloat="true" layoutX="16.0" layoutY="223.0" maxWidth="230.0" minWidth="230.0" prefHeight="31.0" prefWidth="230.0" promptText="Edition" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
